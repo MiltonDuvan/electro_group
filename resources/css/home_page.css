@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribuye los elementos a lo largo del eje principal */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px 20px; /* Añade espacio alrededor de los elementos */
+}
+
+.logo-container{
+    width: 150px;
+}
+
+.logo {
+    height: auto;
+    max-width: 100%;
+}
+
+.button {
+   
+    padding: 10px 20px;
+    background-color: #1aa4de;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
