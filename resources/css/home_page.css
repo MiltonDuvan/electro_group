@@ -36,3 +36,20 @@ input[type="text"] {
     border-radius: 5px;
     font-size: 16px;
 }
+
+    
+.nav ul{
+    list-style: none;
+}
+.nav ul.cont-current-tab li {
+    display: inline-block;
+    margin-right: 10px;
+    text-decoration: none;
+}
+.nav ul.cont-current-tab li:last-child{
+    margin-right: 0;
+}
+
+.nav ul.cont-current-tab li a {
+    text-decoration: none;
+}
