@@ -1,7 +1,7 @@
 console.log('joas')
 
 $(document).ready(function () {
-    loadPage('toGoBestSeller'); // Cargar best_seller_page al cargar la página
+    loadPage('goToRegister'); // Cargar best_seller_page al cargar la página
 });
 
 function loadPage(page) {

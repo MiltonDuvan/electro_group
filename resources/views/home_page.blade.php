@@ -29,13 +29,13 @@
         <div class="nav">
             <div>
                 <ul class="cont-current-tab">
-                    <li><a href="#" onclick="loadPage('toGoBestSeller')">MAS VENDIDOS</a></li>
-                    <li><a href="#" onclick="loadPage('toGoRecommended')">RECOMENDADOS</a></li>
+                    <li><a href="#" onclick="loadPage('goToBestSeller')">MAS VENDIDOS</a></li>
+                    <li><a href="#" onclick="loadPage('goToRecommended')">RECOMENDADOS</a></li>
                 </ul>
             </div>
             <div>
                 <ul class="cont-current-tab">
-                    <li><a href="#">Crea tu cuenta</a></li>
+                    <li><a href="#" onclick="loadPage('goToRegister')" >Crea tu cuenta</a></li>
                     <li><a href="#">Ingresa</a></li>
                 </ul>
             </div>
