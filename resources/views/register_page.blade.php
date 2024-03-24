@@ -26,6 +26,9 @@
             <label for="addres">Direccion</label>
             <input type="text" placeholder="Ingrese su nombre">
         </div>
+
+        <x-delete_alert></x-delete_alert>
+
     </form>
 
 </div>
