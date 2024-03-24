@@ -14,7 +14,7 @@
     <header>
         <nav class="navbar">
             <div class="logo-container">
-                <img class="logo" src="{{ asset('image/logo.svg') }}" alt="logo">
+                <img class="logo" src="{{ asset('image/logo_ecommerce.png') }}" alt="logo" width="20%">
             </div>
             <div class="button-container">
                 <button class="button">
@@ -27,10 +27,18 @@
         </nav>
 
         <div class="nav">
-            <ul class="cont-current-tab">
-                <li><a href="#" onclick="loadPage('toGoBestSeller')">MAS VENDIDOS</a></li>
-                <li><a href="#" onclick="loadPage('toGoRecommended')">RECOMENDADOS</a></li>
-            </ul>
+            <div>
+                <ul class="cont-current-tab">
+                    <li><a href="#" onclick="loadPage('toGoBestSeller')">MAS VENDIDOS</a></li>
+                    <li><a href="#" onclick="loadPage('toGoRecommended')">RECOMENDADOS</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul class="cont-current-tab">
+                    <li><a href="#">Crea tu cuenta</a></li>
+                    <li><a href="#">Ingresa</a></li>
+                </ul>
+            </div>
         </div>
 
     </header>
