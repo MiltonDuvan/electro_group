@@ -2,17 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 
-Route::get('/', [HomeController::class, 'index'])-> name('home.index');
+Route::get('/home', [HomeController::class, 'home'])->name('home_page');
+Route::get('/recommendations', [HomeController::class, 'goToRecommendations'])->name('recommended_page');
+Route::get('/login', [HomeController::class, 'goToLogin'])->name('login');
+Route::get('/product detail',[HomeController::class, 'goToProductDetail'])->middleware('auth')->name('product_detail_page');
 
-Route::get('/goToBestSeller', function () {
-    return view('best_seller_page');
-})->name('page1');
+// Register and Login
 
-Route::get('/goToRecommended', function () {
-    return view('recommended_page');
-})->name('page2');
-
-Route::get('/goToRegister', function () {
-    return view('register_page');
-})->name('page3');
+Route::get('/register', [UserController::class, 'goToRegister'])->name('register_page');
+Route::post('/confirm_registration',[UserController::class, 'register'])->name('confirm_registration');
+Route::get('/confirm_logout',[UserController::class, 'logout'])->name('confirm_logout');
+Route::post('/confirm_login',[UserController::class, 'login'])->name('confirm_login');
