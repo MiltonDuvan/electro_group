@@ -5,7 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 
 Route::get('/home', [HomeController::class, 'home'])->name('home_page');
-Route::get('/recommendations', [HomeController::class, 'goToRecommendations'])->name('recommended_page');
+Route::get('/bestseller', [HomeController::class, 'goToBestSeller'])->name('best_seller_page');
 Route::get('/login', [HomeController::class, 'goToLogin'])->name('login');
 Route::get('/product detail',[HomeController::class, 'goToProductDetail'])->middleware('auth')->name('product_detail_page');
 

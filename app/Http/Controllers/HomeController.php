@@ -11,8 +11,8 @@ class HomeController extends Controller
         return view('home/home_page');
     }
 
-    public function goToRecommendations(){
-        return view('home/recommended_page');
+    public function goToBestSeller(){
+        return view('home/best_seller_page');
     }
 
     public function goToLogin(){
