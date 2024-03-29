@@ -2,13 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
     public function home()
     {
-        return view('home/home_page');
+        $products = Product::paginate(20);
+
+        foreach ($products as $product){
+            $product->cover_image_url = Storage::url($product->cover_image);
+        }
+
+        return view('home/home_page', compact('products'));
     }
 
     public function goToBestSeller(){
@@ -19,8 +27,12 @@ class HomeController extends Controller
        return view('login/login_page');
     }
 
+    public function goToProductAdd(){
+        return view('product/product_add_page');
+    }
+
     public function goToProductDetail(){
-        return view('product_detail/product_detail_page');
+        return view('product/product_detail_page');
     }
 
 }

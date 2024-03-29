@@ -23,8 +23,8 @@
     </div>
     <div>
         <ul class="cont-current-tab">
+            <li><a href="{{ route('product_add_page') }}">Agregar producto</a></li>
             <li><a href="{{ route('login') }}">Ingresa</a></li>
-
             @auth <a href="{{ route('confirm_logout') }}"><button type="button">Salir</button></a> @endauth
 
         </ul>

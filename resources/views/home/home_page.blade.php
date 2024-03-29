@@ -16,38 +16,42 @@
 
     </header>
     <main id="main-content">
-        <div class="cont-cards">
-            <div class="card">
-                <div class="card-content-sup">
-                    <p>Descuento</p>
-                </div>
-                <div class="card-content">
-                    <div class="card-content-img">
-                        <img class="card-img"
-                            src="https://elcomercio.pe/resizer/gj5JbwxkmqRAa4HSpfOHEIUBf7k=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/6FUBT6XQXNHHNFOMCHIT7I34NA.jpg"
-                            alt="">
-                    </div>
-                    <div class="card-content-sub">
-                        <title>Nevera</title>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore odit eos necessitatibus est
-                            architecto? Aperiam iusto itaque culpa eveniet temporibus accusamus voluptas eum, vitae
-                            laudantium quia eaque inventore numquam quidem!
-                        </p>
-                        <div class="card-content-sub-sub">
-                            <p>precio viejo | precio nuevo</p>
+        @if ($products->isNotEmpty())
+            @foreach ($products as $product)
+                <div class="cont-cards">
+                    <div class="card">
+                        <div class="card-content-sup">
+                            <p>Descuento</p>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-content-img">
+                                <img class="card-img" src="{{asset('storage/app/'.$product->cover_image) }}" alt="">
+                                <img class="card-img" src="{{$product->cover_image_url}}" alt="{{$product->name}}">
+                               
+                            </div>
+                            {{ $product->cover_image }}
+                            <div class="card-content-sub">
+                                <p>{{ $product->name }}</p>
+                                <p>{{ $product->description }}
+                                </p>
+                                <div class="card-content-sub-sub">
+                                    <p>{{ $product->price }} | precio nuevo</p>
 
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="footer">
+                            <a href="{{ route('product_detail_page') }}"><Button type="submit">Comprar</Button></a>
                         </div>
                     </div>
                 </div>
-                <div class="footer">
-        <a class="clickMe" href="{{route('product_detail_page')}}">COmprar</a>
-                </div>
-            </div>
-
-        </div>
+            @endforeach
+        @else
+            <p>No hay productos disponibles</p>
+        @endif
     </main>
-    <script src="{{ mix('resources/js/home_page.js') }}"></script>
-
 </body>
 
 </html>
