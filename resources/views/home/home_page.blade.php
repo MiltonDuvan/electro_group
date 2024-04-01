@@ -25,11 +25,8 @@
                         </div>
                         <div class="card-content">
                             <div class="card-content-img">
-                                <img class="card-img" src="{{asset('storage/app/'.$product->cover_image) }}" alt="">
-                                <img class="card-img" src="{{$product->cover_image_url}}" alt="{{$product->name}}">
-                               
+                                <img class="card-img" src="/image/{{ $product->cover_image }}" width="60%">
                             </div>
-                            {{ $product->cover_image }}
                             <div class="card-content-sub">
                                 <p>{{ $product->name }}</p>
                                 <p>{{ $product->description }}
@@ -52,6 +49,7 @@
             <p>No hay productos disponibles</p>
         @endif
     </main>
+    <script src="{{ mix('resources/js/product/manage_product.js') }}"></script>
 </body>
 
 </html>
