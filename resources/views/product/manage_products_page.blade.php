@@ -13,51 +13,59 @@
 
 <body>
     <main>
-        <div>
-            <a type="button" href="{{ route('product_add_page') }}">Nuevo Producto</a>
-            <table>
-                <thead>
+
+        <div class="form-group">
+            <a class="btn" type="button" href="{{ route('product_add_page') }}">Nuevo Producto</a>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>DESCRIPCION</th>
+                    <th>PRECIO</th>
+                    <th>MARCA</th>
+                    <th>CANTIDAD</th>
+                    <th>IMAGEN</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($products as $product)
                     <tr>
-                        <th>ID</th>
-                        <th>NOMBRE</th>
-                        <th>DESCRIPCION</th>
-                        <th>PRECIO</th>
-                        <th>MARCA</th>
-                        <th>CANTIDAD</th>
-                        <th>IMAGEN</th>
-                        <th>ACCIONES</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($products as $product)
-                        <tr>
-                            <td>{{ $product->id }}</td>
-                            <td>{{ $product->name }}</td>
-                            <td>{{ $product->description }}</td>
-                            <td>{{ $product->price }}</td>
-                            <td>{{ $product->brand }}</td>
-                            <td>{{ $product->stock }}</td>
-                            <td class="image-cell">
-                                <img class="imgCover" src="/image/{{ $product->cover_image }}">
-                            </td>
-                            <td>
-                                <div>
-                                    <a href="{{ route('edit_product_page', $product->id) }}">Editar</a>
-
-                                    <form class="deleteForm"
-                                        action="{{ route('destroy_product', ['id' => $product->id]) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button class="btnDelete" type="submit">Borrar</button>
-                                    </form>
-
+                        <td>{{ $product->id }}</td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->description }}</td>
+                        <td>{{ $product->price }}</td>
+                        <td>{{ $product->brand }}</td>
+                        <td>{{ $product->stock }}</td>
+                        <td class="image-cell">
+                            <img class="imgCover" src="/image/{{ $product->cover_image }}">
+                        </td>
+                        <td>
+                            <div>
+                                <div class="form-group">
+                                    <button class="btnEdit">
+                                        <a href="{{ route('edit_product_page', $product->id) }}">Editar</a>
+                                    </button>
                                 </div>
 
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
+                                <form class="deleteForm" action="{{ route('destroy_product', ['id' => $product->id]) }}"
+                                    method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="form-group">
+                                        <button class="btnDelete" type="submit">Borrar</button>
+                                    </div>
+                                </form>
+
+                            </div>
+
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
         </div>
 
         {{-- ALERTA "SEGURO DESEA ELIMINAR EL REGISTRO" --}}

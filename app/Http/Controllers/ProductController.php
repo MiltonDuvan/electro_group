@@ -52,8 +52,8 @@ class ProductController extends Controller
 
         Product::create($product);
 
-        return redirect()->route('home_page');
-        
+        return redirect()->route('manage_products_page');
+
     }
 
     public function edit($id)

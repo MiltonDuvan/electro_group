@@ -7,7 +7,7 @@
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Grupo Mansion</title>
-    @vite(['resources/css/home_page.css', 'resources/js/home_page.js'])
+    @vite(['resources/css/home_page.css', 'resources/css/navbar.css'])
 </head>
 
 <body>
