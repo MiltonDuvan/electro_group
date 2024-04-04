@@ -1,17 +1,33 @@
 <nav class="navbar">
     <div class="logo-container">
-        <a href="{{route('home_page')}}"><img class="logo" src="{{ asset('image/logo_ecommerce.png') }}" alt="logo"></a>
-        
+        <a href="{{ route('home_page') }}"><img class="logo" src="{{ asset('image/logo_ecommerce.png') }}"
+                alt="logo"></a>
+
     </div>
     <div class="btn-input">
         <div class="button-container">
-            <button class="button">
+
+            @auth
+            @else
+                <button class="button">
+                    <i class="fas fa-bars"></i>
+                    Bienvenido </button>
+            @endauth
+            @auth
+            <a href="{{ route('manage_products_page') }}" class="button2">
                 <i class="fas fa-bars"></i>
-                Nuestras Categorias </button>
+                Crear producto
+            </a>
+            @endauth
+
         </div>
-        <div class="input-container">
-            <input type="text" placeholder="Buscar...">
-            <i class="fas fa-search"></i>
+        <div>
+            <div class="input-container">
+                <form action="{{ route('search_results_page') }}" method="GET">
+                    <input type="text" name="search" placeholder="Buscar...">
+                    <button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
         </div>
     </div>
 
@@ -25,16 +41,17 @@
         </ul>
     </div>
     <div class="cont-nav-2">
-        <p> Bienvenido @auth {{ Auth::user()->name }} @endauth
-        </p>
-
         <ul class="cont-current-tab">
+            @auth
+            @else
+                <li><a href="{{ route('login') }}">Ingresa</a></li>
+            @endauth
+            @auth
 
-            <li><a href="{{ route('login') }}">Ingresa</a></li>
-            @auth <a href="{{ route('confirm_logout') }}"><button type="button">Salir</button></a> @endauth
+                <li><a href="{{ route('cart.show') }}"><i class="fas fa-shopping-cart"></i> Carrito</a></li>
+            <a href="{{ route('confirm_logout') }}"><button type="button">Salir</button></a> @endauth
 
         </ul>
-
     </div>
 
 </div>

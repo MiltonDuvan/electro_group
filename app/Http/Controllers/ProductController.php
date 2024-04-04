@@ -105,4 +105,15 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('manage_products_page');
     }
+
+    public function search(Request $request)
+{
+    $query = $request->input('search');
+    $products = Product::where('name', 'like', '%' . $query . '%')
+                       ->orWhere('description', 'like', '%' . $query . '%')
+                       ->paginate(20);
+    return view('search.search_results_page', compact('products', 'query'));
+}
+
+
 }

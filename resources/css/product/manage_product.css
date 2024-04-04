@@ -59,6 +59,8 @@ tbody tr:hover {
     text-decoration: underline;
 }
 .form-group{
+    display: flex;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 a{
@@ -68,6 +70,15 @@ a{
     padding: 10px 20px;
     font-size: 16px;
     background-color: #33cd5e;
+    color: #000000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn2{
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #334acdaf;
     color: #000000;
     border: none;
     border-radius: 4px;

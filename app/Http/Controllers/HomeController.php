@@ -29,9 +29,10 @@ class HomeController extends Controller
         return view('product/add_product_page');
     }
 
-    public function goToProductDetail()
+    public function goToProductDetail($id)
     {
-        return view('product/product_detail_page');
+        $product = Product::find($id);
+        return view('product/product_detail_page', compact('product'));
     }
 
 }

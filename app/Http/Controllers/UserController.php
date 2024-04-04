@@ -38,7 +38,7 @@ class UserController extends Controller
         $remember = ($request-> has('remenber') ? true : false);
         if(Auth::attempt($credentials, $remember)){
             $request->session()->regenerate();
-            return redirect('home');
+            return redirect()->intended(route('home_page'));
         }else{
             return redirect('login');
         }

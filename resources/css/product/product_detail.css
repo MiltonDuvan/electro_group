@@ -1,0 +1,36 @@
+main {
+    padding: 20px;
+}
+.contenedor {
+    display: flex;
+}
+article {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.image-gallery img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.main-image {
+    width: 90%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.product-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+}

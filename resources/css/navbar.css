@@ -30,6 +30,19 @@
     font-size: 1rem;
     cursor: pointer;
 }
+.button2 {
+    display: inline-block;
+    background-color: #4CAF50; /* Color verde */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
 input[type="text"] {
     padding: 8px;
@@ -43,7 +56,7 @@ input[type="text"] {
 }
 .nav .cont-nav-2 {
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     padding: 20px;
 }
 .nav ul {

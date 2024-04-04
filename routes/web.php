@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -9,7 +10,7 @@ use App\Http\Controllers\UserController;
 Route::get('/home', [HomeController::class, 'home'])->name('home_page');
 Route::get('/bestseller', [HomeController::class, 'goToBestSeller'])->name('best_seller_page');
 Route::get('/login', [HomeController::class, 'goToLogin'])->name('login');
-Route::get('/product detail', [HomeController::class, 'goToProductDetail'])->middleware('auth')->name('product_detail_page');
+Route::get('/product_detail{id}', [HomeController::class, 'goToProductDetail'])->middleware('auth')->name('product_detail_page');
 Route::get('/product add', [HomeController::class, 'goToProductAdd'])->name('product_add_page');
 
 // Register and Login
@@ -25,3 +26,12 @@ Route::post('/product_confirm', [ProductController::class, 'store'])->name('prod
 Route::get('/edit_product/{id}', [ProductController::class, 'edit'])->name('edit_product_page');
 Route::put('/update_product/{id}', [ProductController::class, 'update'])->name('update_product');
 Route::delete('/destroy_product/{id}', [ProductController::class, 'destroy'])->name('destroy_product');
+Route::get('/search', [ProductController::class, 'search'])->name('search_results_page');
+
+
+// Cart
+Route::post('/cart/add/{productId}', [CartController::class, 'addToCart'])->name('cart.add');
+Route::delete('/cart/remove/{productId}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+Route::post('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+

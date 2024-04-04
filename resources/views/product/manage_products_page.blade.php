@@ -16,6 +16,8 @@
 
         <div class="form-group">
             <a class="btn" type="button" href="{{ route('product_add_page') }}">Nuevo Producto</a>
+            <a class="btn2" type="button" href="{{ route('home_page') }}">Ir home</a>
+
         </div>
         <table>
             <thead>

@@ -28,7 +28,6 @@
                                 <img class="card-img" src="/image/{{ $product->cover_image }}">
                             </div>
                             <div class="card-content-sub">
-                                {{-- <p>{{ $product->name }}</p> --}}
                                 <p>{{ $product->description }}
                                 </p>
                                 <div class="card-content-sub-sub">
@@ -37,7 +36,8 @@
                             </div>
                         </div>
                         <div class="footer">
-                            <a href="{{ route('product_detail_page') }}"><Button class="btn" type="submit">Comprar</Button></a>
+                            <a href="{{ route('product_detail_page', $product->id) }}"><Button class="btn"
+                                    type="submit">Comprar</Button></a>
                         </div>
                     </div>
                 @endforeach
